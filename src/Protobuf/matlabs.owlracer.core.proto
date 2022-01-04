@@ -1,0 +1,145 @@
+﻿syntax = "proto3";
+package matlabs.owlracer.core;
+
+option csharp_namespace = "Matlabs.OwlRacer.Protobuf";
+option java_package = "de.mathema.owlracer.protobuf";
+option java_outer_classname = "OwlRacerCore";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+message CreateSessionData {
+  float gameTimeSetting = 1;
+  string name = 2;
+  int32 trackNumber = 3;
+}
+
+message SessionData {
+  GuidData id = 1;
+  string name = 2; 
+  float gameTimeSetting = 3;
+  int32 trackNumber = 4;
+  repeated ScoreData scores = 5;
+  google.protobuf.Timestamp gameTime = 6;
+  bool isGameTimeNegative = 7;
+  Phase phase = 8;
+
+  enum Phase {
+	  PAUSE = 0;
+	  PRERACE = 1;	  
+	  RACE = 2;	  
+  }
+}
+
+message ScoreData {
+	GuidData carId = 1;
+	string carName = 2;
+	int32 score = 3;	
+}
+
+message TrackData {
+	int32 trackNumber = 1;
+	VectorData2D startPosition = 2;
+	float startRotation = 3;
+	VectorData2D linePositionStart = 4;
+	VectorData2D linePositionEnd = 5;
+}
+
+message GuidData {
+  string guidString = 1;
+}
+
+message ResourceImagesDataResponse {
+  bytes car = 1;
+  bytes startLine = 2;
+}
+
+message TrackImageDataResponse {
+  bytes raceTrack = 1;
+}
+
+message TrackIdData {
+  int32 trackNumber = 1;
+}
+
+message VectorData2D {
+  float x = 1;
+  float y = 2;
+}
+
+message CarDistanceData {
+	int32 front = 1;
+	int32 frontLeft = 2;
+	int32 frontRight = 3;
+	int32 left = 4;
+	int32 right = 5;
+	int32 maxViewDistance = 6;
+}
+
+message CreateCarData {
+  GuidData sessionId = 1;
+  float maxVelocity = 2;
+  float acceleration = 3;
+  string name = 4;
+  string color = 5;
+}
+
+message RaceCarData {
+  GuidData id = 1;
+  GuidData sessionId = 2;
+  VectorData2D position = 3;
+  float rotation = 4;
+  float maxVelocity = 5;
+  float acceleration = 6;
+  float velocity = 7;
+  bool isCrashed = 8;
+  int32 scoreStep = 9;
+  int32 scoreOverall = 10;
+  int32 ticks = 11;
+  CarDistanceData distance = 12;
+  int32 checkPoint = 13;
+  int32 lastStepCommand = 14;
+  string name = 15;
+  int32 numRounds = 16;
+  int32 numCrashes = 17;
+  bool UnCrashed = 18;
+  bool WrongDirection = 19;
+  string color = 20;
+}
+
+message StepData {
+  GuidData carId = 1;
+  StepCommand command = 2;
+  enum StepCommand {
+    IDLE = 0;
+	ACCELERATE = 1;
+	DECELERATE = 2;
+	ACCELERATE_LEFT = 3;
+	ACCELERATE_RIGHT = 4;
+	TURN_LEFT = 5;
+	TURN_RIGHT = 6;
+  }
+}
+
+message GuidListData {
+	repeated GuidData guids = 1;
+}
+
+service GrpcCoreService {
+  rpc GetCarIds(GuidData) returns (GuidListData);
+  rpc CreateSession(CreateSessionData) returns (SessionData);
+  rpc GetSession(GuidData) returns (SessionData);
+  rpc GetSessionIds(google.protobuf.Empty) returns (GuidListData);
+  rpc CreateCar(CreateCarData) returns (RaceCarData);
+  rpc DestroyCar(GuidData) returns (google.protobuf.Empty);
+  rpc DestroySession(GuidData) returns (google.protobuf.Empty);
+  rpc GetCarData(GuidData) returns (RaceCarData);
+  rpc Step(StepData) returns (RaceCarData);
+  rpc Reset(GuidData) returns (google.protobuf.Empty);
+}
+
+service GrpcResourceService {
+  rpc GetBaseImages(google.protobuf.Empty) returns (ResourceImagesDataResponse);
+  rpc GetTrackImage(TrackIdData) returns (TrackImageDataResponse);
+  rpc GetTrackData(TrackIdData) returns (TrackData);
+}
