@@ -34,14 +34,12 @@ ____
 * [Architecture](#architecture)
   * [Server](#server)
   * [Common Library](#common-library)  
-  * [Local Client](#local-client)  
-  * [Web Client](#web-client)
+  * [Local Client](#local-client)
   * [Machine Learning Algorithm](#machine-learning-algorithm)
   * [ML.NET Model Loader](#ml.net-model-loader)
-* [SDK](#sdk)
 * [Setup for local development](#setup-for-local-development)
   * [.NET Projects](#.net-projects)
-  * [Machine Learning Samples](#machine-learning-samples)
+
 
 ## Introduction
 
