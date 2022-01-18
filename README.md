@@ -1,6 +1,6 @@
 ![Logo](./doc/owlracer-logo.png)
 
-# Matlabs OwlRacer
+# Owl Racer
 
 
 <p align="center">
@@ -63,18 +63,15 @@ To support pre-computed machine learning models the clients maintained by MATHEM
 
 The server is the central part of the project, calculating the outcome of the commands sent by the clients, keeping everything synchronized and providing services for controlling the racing game overall. The communication between the Server and Clients is performed using (Web-)gRPC.
 
-For more information on the component, [visit its documentation here](https://github.com/MATHEMA-GmbH/Owl-Racer-AI-Server).
+For more details on the component, [visit its documentation here](https://github.com/MATHEMA-GmbH/Owl-Racer-AI-Server).
 
 The server itself is ASP.NET Core based, which means it is able to host the Web-Client directly within its process space.
-
-The Server also contains some sub-components:
-
 
 ### Common Library
 
 The common library contains shared models and classes for easier data exchange between the UI client and the server, as they reside within the same Visual Studio solution. This project is built and used by the other .NET projects directly.
 
-### Local Client
+### Local UI Client
 
 The UI client is a visual test and sandbox client implemented with the MonoGame Framework. MonoGame is based on Microsofts XNA Framework and enables fast and lightweight 2D rendering perfectly suited for the purpose of showing the user what is going on during machine learning. It also enables the users to drive a car themselves and even compete against AI.
 
@@ -82,7 +79,7 @@ Note however, that the UI client is merely a tool to give developers a visual re
 
 The communication between the UI client and the server is realized using a (Web-)gRPC channel.
 
-For more information on the component, [visit its documentation here](https://github.com/MATHEMA-GmbH/Owl-Racer-AI-UI).
+For more details on the component, [visit its documentation here](https://github.com/MATHEMA-GmbH/Owl-Racer-AI-UI).
 
 #### Machine Learning Algorithm
 
