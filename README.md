@@ -63,7 +63,7 @@ To support pre-computed machine learning models the clients maintained by MATHEM
 
 The server is the central part of the project, calculating the outcome of the commands sent by the clients, keeping everything synchronized and providing services for controlling the racing game overall. The communication between the Server and Clients is performed using (Web-)gRPC.
 
-For more information on the component, [visit its documentation here](src/Matlabs.OwlRacer.Server/README.md).
+For more information on the component, [visit its documentation here](https://github.com/MATHEMA-GmbH/Owl-Racer-AI-Server).
 
 The server itself is ASP.NET Core based, which means it is able to host the Web-Client directly within its process space.
 
@@ -82,7 +82,7 @@ Note however, that the UI client is merely a tool to give developers a visual re
 
 The communication between the UI client and the server is realized using a (Web-)gRPC channel.
 
-For more information on the component, [visit its documentation here](src/Matlabs.OwlRacer.GameClient/README.md).
+For more information on the component, [visit its documentation here](https://github.com/MATHEMA-GmbH/Owl-Racer-AI-UI).
 
 #### Machine Learning Algorithm
 
@@ -95,7 +95,7 @@ Currently there are sample algorithms available, written in Python.
 ### Setup for local development
 
 If you want to develop directly on the project, the following requirements must be met.
-``Use `code` in your Markdown file.``
+
 #### .NET Projects
 
 The .NET projects include the server, the common library, the UI client and the ML.NET model loader
@@ -104,11 +104,11 @@ The .NET projects include the server, the common library, the UI client and the 
 * Visual Studio 2019 or later
 * A [protobuf compiler](https://developers.google.com/protocol-buffers) (can be installed with Visual Studio)
 
-The main Visual Studio solution containing the project you need will be build with the setup.sh. This way your project only contains the repositories you need
+The main Visual Studio solution containing the project you need will be build with the setup.sh. This way your project contains the repositories you need
 
 For Windows install with the PowerShell ``. .\setup.sh ``
 
-When all requirements above are met, the solution should build without any further setup or problems.
+If all requirements above are met, the solution should build without any further setup or problems.
 
 There are currently two standard configurations for the solution, **DEBUG** and **RELEASE**. Apart from some more verbose console output and the usual facts about **DEBUG** and **RELEASE** builds, the configuration you use will not matter that much at the moment.
 
