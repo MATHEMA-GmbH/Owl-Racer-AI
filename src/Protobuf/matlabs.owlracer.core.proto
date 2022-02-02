@@ -34,7 +34,9 @@ message SessionData {
 message ScoreData {
 	GuidData carId = 1;
 	string carName = 2;
-	int32 score = 3;	
+	int32 numCrashes = 3;
+	int32 numRounds = 4;
+	int32 score = 5;	
 }
 
 message TrackData {
