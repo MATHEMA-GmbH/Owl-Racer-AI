@@ -42,8 +42,8 @@ ____
 
 ## Introduction
 
-This repository serves as the head repo for the Owl Racer AI project. 
-The goal of this project is to play around and work with an AI using a simple racing game framework. 
+This repository serves as the head repo for the Owl Racer AI project.
+The goal of this project is to play around and work with an AI using a simple racing game framework.
 It is intended for students, colleagues and enthusiasts who want to get started with machine learning or try out their own models.
 
 ## Architecture
@@ -110,3 +110,5 @@ If all requirements above are met, the solution should build without any further
 There are currently two standard configurations for the solution, **DEBUG** and **RELEASE**. Apart from some more verbose console output and the usual facts about **DEBUG** and **RELEASE** builds, the configuration you use will not matter that much at the moment.
 
 When starting the projects, the server should always be started first, for any other client you want to use. It is recommended to setup multiple startup-projecsts in the solution settings, having the server start before the client, to make things easier.
+
+For execution of the different clients you need to edit the file paths in ``Matlabs.OwlRacer.GameClient\appsettings.json``
