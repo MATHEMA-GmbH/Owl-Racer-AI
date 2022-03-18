@@ -112,3 +112,4 @@ There are currently two standard configurations for the solution, **DEBUG** and 
 When starting the projects, the server should always be started first, for any other client you want to use. It is recommended to setup multiple startup-projecsts in the solution settings, having the server start before the client, to make things easier.
 
 For execution of the different clients you need to edit the file paths in ``Matlabs.OwlRacer.GameClient\appsettings.json``
+We provide you some examples in ``Matlabs.OwlRacer.GameClient\appsettings_examples.json``
