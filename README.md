@@ -100,6 +100,7 @@ The .NET projects include the server, the common library, the UI client and the 
 * .NET 3 Framework (for UI client)
 * Visual Studio 2019 or later
 * A [protobuf compiler](https://developers.google.com/protocol-buffers) (can be installed with Visual Studio)
+* Git Bash
 
 The main Visual Studio solution containing the project you need will be build with the setup.sh. This way your project contains the repositories you need
 
