@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Matlabs.OwlRacer.Common.Options
+﻿namespace Matlabs.OwlRacer.Common.Options
 {
     public class ScriptMappingOptions
     {
@@ -13,6 +7,7 @@ namespace Matlabs.OwlRacer.Common.Options
         public string Args { get; set; }
         public bool ShellExecute { get; set; }
         public string CarName { get; set; }
-        public string CarColar { get; set; }
+        public string CarColor { get; set; }
+        public int Version { get; set; }
     }
 }
