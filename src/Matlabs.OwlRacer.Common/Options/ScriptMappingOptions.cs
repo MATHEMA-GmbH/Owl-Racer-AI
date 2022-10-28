@@ -9,5 +9,6 @@
         public string CarName { get; set; }
         public string CarColor { get; set; }
         public int Version { get; set; }
+        public string Model { get; set; }
     }
 }
