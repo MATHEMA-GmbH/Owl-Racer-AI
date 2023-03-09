@@ -17,6 +17,8 @@ namespace Matlabs.OwlRacer.Common.Model
         public Dictionary<RaceCar, int> Scores { get; set; } = new();
         public TimeSpan GameTime { get; set; } = new();
         public bool IsPaused { get; set; } = false;
+
+        public bool IsFinished { get; set; }
         
         public bool HasRaceStarted => GameTime.Ticks > 0;
 
@@ -26,6 +28,7 @@ namespace Matlabs.OwlRacer.Common.Model
         {
             Id = id;
             Name = name;
+            IsFinished = false;
         }
     }
 }
